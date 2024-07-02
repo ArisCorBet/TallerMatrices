@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+#define N 3 // Tamaño de la matriz
+
+void printMatrix(float mat[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%f ", mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void transposeMatrix(float mat[N][N], float trans[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            trans[j][i] = mat[i][j];
+        }
+    }
+}
+
+void symmetricMatrix(float mat[N][N], float sym[N][N]) {
+    float trans[N][N];
+    transposeMatrix(mat, trans);
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            sym[i][j] = (mat[i][j] + trans[i][j]) / 2.0;
+        }
+    }
+}
+
+int main() {
+    float mat[N][N] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    float sym[N][N];
+
+    symmetricMatrix(mat, sym);
+
+    printf("Matriz original:\n");
+    printMatrix(mat);
+
+    printf("\nMatriz simétrica:\n");
+    printMatrix(sym);
+
+    return 0;
+}
