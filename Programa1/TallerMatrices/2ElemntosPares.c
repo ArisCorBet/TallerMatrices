@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
 
-///////////////////////Elementos pares//////////////////
+///////////////////////Elementos pares///////////////////
    
     printf("==========Matrices=========\n");
 
