@@ -12,3 +12,5 @@
 - multiplicación de matrices: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/11Multiplicaci%C3%B3nMatriz.c
 - división de matrices: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/12DivisionMatriz.c 
 - potencia de matrices: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/13PotenciaMatriz.c
+- Hexadecimal: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/14Hexodecimal.c
+- 
