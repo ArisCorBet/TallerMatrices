@@ -1,51 +1,48 @@
 #include <stdio.h>
 
-#define N 3 // Tamaño de la matriz
 
-void printMatrix(float mat[N][N]) {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            printf("%f ", mat[i][j]);
+int main() {
+
+    int num;
+
+    printf("=============Matriz Cuadrada============== \n");
+
+    // Pedir al usuario el número de filas y columnas
+    printf("Ingrese el numero de filas y columnas: \n");
+    scanf("%d", &num);
+    
+
+    int matriz1[num][num];
+
+    // Pedir al usuario que ingrese los elementos de la primera matriz
+    printf("Ingrese los elementos de la primera matriz:\n");
+    for (int i = 0; i < num; i++) {
+        for (int j = 0; j < num; j++) {
+            scanf("%d", &matriz1[i][j]);
+        }
+    }
+
+    // Definimos una matriz para almacenar la matriz simétrica
+    int matrizSimetrica[num][num];
+
+    // Iteramos sobre las filas de la matriz
+    for (int i = 0; i < num; i++) {
+        // Iteramos sobre las columnas de la matriz
+        for (int j = 0; j < num; j++) {
+            // Calculamos el elemento de la matriz simétrica
+            matrizSimetrica[i][j] = (matriz1[i][j] + matriz1[j][i]) / 2;
+        }
+    }
+
+    // Imprimimos la matriz simétrica A
+    printf("La matriz simetrica es:\n");
+    for (int i = 0; i < num; i++) {
+        for (int j = 0; j < num; j++) {
+            printf("%d ", matrizSimetrica[i][j]);
         }
         printf("\n");
     }
-}
-
-void transposeMatrix(float mat[N][N], float trans[N][N]) {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            trans[j][i] = mat[i][j];
-        }
-    }
-}
-
-void symmetricMatrix(float mat[N][N], float sym[N][N]) {
-    float trans[N][N];
-    transposeMatrix(mat, trans);
-
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            sym[i][j] = (mat[i][j] + trans[i][j]) / 2.0;
-        }
-    }
-}
-
-int main() {
-    float mat[N][N] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    float sym[N][N];
-
-    symmetricMatrix(mat, sym);
-
-    printf("Matriz original:\n");
-    printMatrix(mat);
-
-    printf("\nMatriz simétrica:\n");
-    printMatrix(sym);
 
     return 0;
 }
+
