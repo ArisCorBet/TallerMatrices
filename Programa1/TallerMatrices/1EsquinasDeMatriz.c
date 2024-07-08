@@ -2,7 +2,7 @@
 int main(){
 
     printf("========== Presentar esquinas de Matriz =========\n");
-    int Matriz[3][3];
+    int Matriz[3][3]; //crear arreglo definido como matriz y definir valor de cada posicion
     Matriz[0][0] = 1;
     Matriz[0][1] = 2;
     Matriz[0][2] = 3;
