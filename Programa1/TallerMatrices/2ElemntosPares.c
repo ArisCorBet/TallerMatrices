@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main(){
 
-///////////////////////Elementos pares///////////////////
+///////////////////////Elementos pares//////////////////
    
     printf("==========Matrices=========\n");
 
-    
+    //crear arreglo definido como matriz y definir valor de cada posicion
     int matriz [3][3];
     matriz[0][0]=1;
     matriz[0][1]=2;
@@ -17,11 +17,13 @@ int main(){
     matriz[2][1]=8;
     matriz[2][2]=9;
 
-    for (int i = 0; i < 3; i++)
+
+    //Condicion para recorrer todas las posiciones de la matriz
+    for (int i = 0; i < 3; i++) // i para filas
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < 3; j++) //j para columnas
         {
-            if (matriz[i][j] %2 == 0 )
+            if (matriz[i][j] %2 == 0 ) //Condicion para solo imprimir los numeros pares
             {
                 printf("Elementos Pares: %d\n",matriz[i][j]);
             }
