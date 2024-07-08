@@ -14,5 +14,4 @@
 - potencia de matrices: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/13PotenciaMatriz.c
 - Hexadecimal: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/14Hexodecimal.c
 - Cartas Metododo Burbuja: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/CartasBurbuja.c
-- Cartas Metodo Mezcla
 - Cartas metodo insercion: https://github.com/ArisCorBet/TallerMatrices/blob/main/Programa1/TallerMatrices/CartasInsercion.c
