@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-
 int main() {
 
     int num;
 
-    printf("=============Matriz Cuadrada============== \n");
+    printf("=============Matriz Simetrica============== \n");
 
     // Pedir al usuario el número de filas y columnas
     printf("Ingrese el numero de filas y columnas: \n");
@@ -34,7 +33,18 @@ int main() {
         }
     }
 
-    // Imprimimos la matriz simétrica A
+
+    //Imprimir matriz original
+    printf("La matriz original es:\n"); 
+    for (int i = 0; i < num; i++) {
+        for (int j = 0; j < num; j++) {
+            printf("%d ", matriz1[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    // Imprimimos la matriz simétrica 
     printf("La matriz simetrica es:\n");
     for (int i = 0; i < num; i++) {
         for (int j = 0; j < num; j++) {
