@@ -2,6 +2,8 @@
 
 int main() {
     printf("==========Matrices=========\n");
+
+    //crear arreglo definido como matriz y definir valor de cada posicion
     int Matriz [3][3];
     Matriz[0][0]= 1;
     Matriz[0][1]= 2;
@@ -15,13 +17,15 @@ int main() {
 
     int transpuesta[3][3];
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            transpuesta[j][i] = Matriz[i][j];
+    for (int i = 0; i < 3; i++) { //Recorrer filas
+        for (int j = 0; j < 3; j++) { //Recorrer columnas
+            transpuesta[j][i] = Matriz[i][j]; //Le da la vuelta a la matriz [j][i]
         }
     }
 
-    printf("La matriz original es:\n");
+
+    //Imprimir matriz original
+    printf("La matriz original es:\n"); 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             printf("%d ", Matriz[i][j]);
@@ -29,6 +33,8 @@ int main() {
         printf("\n");
     }
 
+
+//Imprimir matriz transpuesta
     printf("La matriz transpuesta es:\n");
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
