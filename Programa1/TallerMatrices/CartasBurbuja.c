@@ -3,15 +3,15 @@
 #include <time.h>
 
 int main() {
-    char baraja[52][4];  // Para almacenar hasta "13c" (dos dígitos y un carácter)
-    char palos[] = {'c', 'E', 'T', 'D'};  // Palos de la baraja: tréboles, espadas, corazones rojos y corazones negros
-    int index = 0;
+    char baraja[52][4];  // Para almacenar hasta cartas y simbolo (dos dígitos y un carácter)
+    char simbolo[] = {'c', 'E', 'T', 'D'};  // simbolo de la baraja: tréboles, espadas, corazones rojos y corazones negros
+    int posicionbaraja = 0;
 
     // Generar la baraja
-    for (int p = 0; p < 4; p++) {  // Iterar sobre los palos
+    for (int p = 0; p < 4; p++) {  // Iterar sobre los simbolos
         for (int n = 1; n <= 13; n++) {  // Iterar sobre los números del 1 al 13
-            sprintf(baraja[index], "%d%c", n, palos[p]);  // Crear la carta y almacenarla en la baraja
-            index++;
+            sprintf(baraja[posicionbaraja], "%d%c", n, simbolo[p]);  // Crear la carta y almacenarla en la baraja
+            posicionbaraja++;
         }
     }
 
@@ -19,7 +19,7 @@ int main() {
     srand(time(NULL));  // Inicializar el generador de números aleatorios
     for (int i = 0; i < 52; i++) {
         int j = rand() % 52;  // Generar un índice aleatorio
-        char temp[4];
+        char temp[4];//Para almacenar temporalmente una carta
         sprintf(temp, "%s", baraja[i]);  // Intercambiar las cartas baraja[i] y baraja[j]
         sprintf(baraja[i], "%s", baraja[j]);
         sprintf(baraja[j], "%s", temp);
@@ -39,14 +39,15 @@ int main() {
     for (int i = 0; i < 51; i++) {
         for (int j = 0; j < 51 - i; j++) {
             int num1, num2;
-            char palo1, palo2;
+            char simbolo1, simbolo2;
 
-            // Extraer número y palo de cada carta
-            sscanf(baraja[j], "%d%c", &num1, &palo1);
-            sscanf(baraja[j + 1], "%d%c", &num2, &palo2);
+            // Extraer número y simbolo de cada carta
+            sscanf(baraja[j], "%d%c", &num1, &simbolo1);
+            sscanf(baraja[j + 1], "%d%c", &num2, &simbolo2);
 
-            // Comparar palos y luego números
-            if (palo1 > palo2 || (palo1 == palo2 && num1 > num2)) {
+            // Comparar simbolos y luego números
+            //Los simbolo se pueden comparar gracias a que se guardan en formato de codigo Ascii
+            if (simbolo1 > simbolo2 || (simbolo1 == simbolo2 && num1 > num2)) {
                 char temp[4];
                 sprintf(temp, "%s", baraja[j]);
                 sprintf(baraja[j], "%s", baraja[j + 1]);
